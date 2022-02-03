@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import "antd/dist/antd.css";
+import "./App.css";
+import { Button, Table, Modal, Input } from "antd";
+import { useState } from "react";
+import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Test from './Components/Test';
+import Home from './Components/Home';
+import Load from './Components/Load';
+import Navbar from "./Components/Navbar/Navbar";
+import Recording from "./Components/Recording";
+import Result from "./Components/Result";
+import CharactersList from "./pages/CharactersList";
 
-function App() {
+
+const App = () => {
+  // return(
+  //   <CharactersList />
+  // )
+
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+        <Navbar />
+       <Switch>
+       <Route exact path="/test" component={Test} />
+       <Route exact path="/" component={Home} />
+       <Route exact path="/load" component={Load} />
+       <Route exact path="/recording" component={Recording} />
+       <Route exact path="/result" component={Result} />
+
+       </Switch>
+    </Router>
+
+    
   );
 }
 
 export default App;
+
+
