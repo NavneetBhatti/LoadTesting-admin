@@ -130,7 +130,7 @@ import { useHistory } from "react-router-dom";
         
         <button style={{ backgroundColor: "#001C3E", marginBottom: "25px", color: "WHITE",height:"40px",width:"150px"}} onClick={navigateTo} type="button" >+New Test</button>
 
-        <Table columns={columns} dataSource={dataSource}></Table>
+        <Table columns={columns} dataSource={dataSource} className="tableR"></Table>
         <Button onClick={onAddStudent}>Add a new test</Button>
 
         <Modal

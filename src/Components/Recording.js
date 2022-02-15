@@ -44,26 +44,31 @@ import { useHistory } from "react-router-dom";
       key: "1",
       title: "ID",
       dataIndex: "id",
+
     },
     {
       key: "2",
       title: "Recording Name",
       dataIndex: "name",
+
     },
     {
       key: "3",
       title: "Start Time",
       dataIndex: "StartTime",
+
     },
     {
       key: "4",
       title: "EndTime",
       dataIndex: "EndTime",
+
     },
     
     {
       key: "5",
       title: "Actions",
+
       render: (record) => {
         return (
         //   <>
@@ -122,7 +127,7 @@ import { useHistory } from "react-router-dom";
         {/* <button style={{ backgroundColor: "#001C3E", color: "WHITE", marginLeft: "680px" ,height:"30px",width:"100px"}} onClick={navigateTo} type="button" >New Recording</button>
 
         <Button onClick={onAddStudent}>Add a new Student</Button> */}
-        <Table columns={columns} dataSource={dataSource}></Table>
+        <Table columns={columns} dataSource={dataSource} className="tableR"></Table>
         {/* <Modal
           title="Edit Student"
           visible={isEditing}

@@ -19,23 +19,21 @@ import CharactersList from "./pages/CharactersList";
 
 
 const App = () => {
-  // return(
-  //   <CharactersList />
-  // )
-
+  
  
   return (
-    <Router>
-        <Navbar />
-       <Switch>
-       <Route exact path="/test" component={Test} />
-       <Route exact path="/" component={Home} />
-       <Route exact path="/load" component={Load} />
-       <Route exact path="/recording" component={Recording} />
-       <Route exact path="/result" component={Result} />
+    <CharactersList />
+    // <Router>
+    //     <Navbar />
+    //    <Switch>
+    //    <Route exact path="/test" component={Test} />
+    //    <Route exact path="/" component={Home} />
+    //    <Route exact path="/load" component={Load} />
+    //    <Route exact path="/recording" component={Recording} />
+    //    <Route exact path="/result" component={Result} />
 
-       </Switch>
-    </Router>
+    //    </Switch>
+    // </Router>
 
     
   );
