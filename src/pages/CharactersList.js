@@ -3,14 +3,12 @@ import { useQuery,gql } from "@apollo/client"
 
 // const GET_CHARACTERS =  gql`
 // query{
-//   allRecordings{
-//     id
-//     startTime
-//     endTime
-//     urlInfoList{
-//       start
-//       end
-//       url
+//   characters{
+    
+//     results{
+//       id
+//       name
+//       image
 //     }
 //   }
 // }
@@ -27,7 +25,7 @@ import { useQuery,gql } from "@apollo/client"
 // }
 
 const GET_CHARACTERS =  gql`
-{
+query{
   allRecordings{
     id
     startTime

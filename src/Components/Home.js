@@ -4,7 +4,8 @@ import { Button, Table, Modal, Input } from "antd";
 import { useState } from "react";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
-
+import Search from "./Search";
+import { PlusOutlined } from '@ant-design/icons';
 
 // export default function home() {
 
@@ -37,6 +38,111 @@ import { useHistory } from "react-router-dom";
     },
     {
       id: 4,
+      name: "Test4",
+      StartTime: "5:00 AM",
+      Runs: "10",
+      minutes: "10",
+    },
+    {
+      id: 5,
+      name: "Test4",
+      StartTime: "5:00 AM",
+      Runs: "10",
+      minutes: "10",
+    },
+    {
+      id: 6,
+      name: "Test4",
+      StartTime: "5:00 AM",
+      Runs: "10",
+      minutes: "10",
+    },
+    {
+      id: 7,
+      name: "Test4",
+      StartTime: "5:00 AM",
+      Runs: "10",
+      minutes: "10",
+    },
+    {
+      id: 8,
+      name: "Test4",
+      StartTime: "5:00 AM",
+      Runs: "10",
+      minutes: "10",
+    },
+    {
+      id: 9,
+      name: "Test4",
+      StartTime: "5:00 AM",
+      Runs: "10",
+      minutes: "10",
+    },
+    {
+      id: 10,
+      name: "Test4",
+      StartTime: "5:00 AM",
+      Runs: "10",
+      minutes: "10",
+    },
+    {
+      id: 11,
+      name: "Test4",
+      StartTime: "5:00 AM",
+      Runs: "10",
+      minutes: "10",
+    },
+    {
+      id: 12,
+      name: "Test4",
+      StartTime: "5:00 AM",
+      Runs: "10",
+      minutes: "10",
+    },
+    {
+      id: 13,
+      name: "Test4",
+      StartTime: "5:00 AM",
+      Runs: "10",
+      minutes: "10",
+    },
+    {
+      id: 14,
+      name: "Test4",
+      StartTime: "5:00 AM",
+      Runs: "10",
+      minutes: "10",
+    },
+    {
+      id: 15,
+      name: "Test4",
+      StartTime: "5:00 AM",
+      Runs: "10",
+      minutes: "10",
+    },
+    {
+      id: 16,
+      name: "Test4",
+      StartTime: "5:00 AM",
+      Runs: "10",
+      minutes: "10",
+    },
+    {
+      id: 17,
+      name: "Test4",
+      StartTime: "5:00 AM",
+      Runs: "10",
+      minutes: "10",
+    },
+    {
+      id: 18,
+      name: "Test4",
+      StartTime: "5:00 AM",
+      Runs: "10",
+      minutes: "10",
+    },
+    {
+      id: 19,
       name: "Test4",
       StartTime: "5:00 AM",
       Runs: "10",
@@ -126,9 +232,20 @@ import { useHistory } from "react-router-dom";
   };
   return (
     <div className="App">
+      {/* <div class="container"> */}
+      {/* <span class="one"> 
+      <Search />
+       </span>
+      <span class="two">
+      <button style={{ backgroundColor: "#001C3E", marginBottom: "25px", color: "WHITE",height:"40px",width:"150px"}} onClick={navigateTo} type="button" >+New Test</button>
+      </span> */}
+      
+      <Search />
+      {/* <button className="btn" style={{ backgroundColor: "#001C3E", marginBottom: "25px", color: "WHITE",height:"40px",width:"150px"}} onClick={navigateTo} type="button" >+New Test</button> */}
+      <PlusOutlined  className="btn" onClick={navigateTo} style={{ backgroundColor: "#1E90FF", color: "WHITE",height:"32px",width:"32px",paddingTop:"9px"}}/>
+      {/* </div> */}
       <header className="App-header">
-        
-        <button style={{ backgroundColor: "#001C3E", marginBottom: "25px", color: "WHITE",height:"40px",width:"150px"}} onClick={navigateTo} type="button" >+New Test</button>
+
 
         <Table columns={columns} dataSource={dataSource} className="tableR"></Table>
         <Button onClick={onAddStudent}>Add a new test</Button>
@@ -179,6 +296,7 @@ import { useHistory } from "react-router-dom";
           />
         </Modal>
       </header>
+
     </div>
   );
 }

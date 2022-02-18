@@ -22,23 +22,20 @@ const App = () => {
   
  
   return (
-    <CharactersList />
-    // <Router>
-    //     <Navbar />
-    //    <Switch>
-    //    <Route exact path="/test" component={Test} />
-    //    <Route exact path="/" component={Home} />
-    //    <Route exact path="/load" component={Load} />
-    //    <Route exact path="/recording" component={Recording} />
-    //    <Route exact path="/result" component={Result} />
+    <Router>
+        <Navbar />
+       <Switch>
+       <Route exact path="/test" component={Test} />
+       <Route exact path="/" component={Home} />
+       <Route exact path="/load" component={Load} />
+       <Route exact path="/recording" component={Recording} />
+       <Route exact path="/result" component={Result} />
 
-    //    </Switch>
-    // </Router>
+       </Switch>
+    </Router>
 
     
   );
 }
 
 export default App;
-
-

@@ -4,6 +4,8 @@ import { Button, Table, Modal, Input } from "antd";
 import { useState } from "react";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
+import CharactersList from "../pages/CharactersList";
+import Search from "./Search";
 
 
 // export default function home() {
@@ -19,24 +21,141 @@ import { useHistory } from "react-router-dom";
       name: "Recording1",
       StartTime: "8:00 AM",
       EndTime: "20",
+      URL : "https://www.youtube.com/watch?v=NbKJFRgsw-A&ab_channel=PragmaticReviews",
     },
     {
       id: 2,
       name: "Recording2",
       StartTime: "8:30 AM",
       EndTime: "30",
+      URL : "https://www.youtube.com/watch?v=NbKJFRgsw-A&ab_channel=PragmaticReviews",
+
     },
     {
       id: 3,
       name: "Recording3",
       StartTime: "9:00 PM",
       EndTime: "10",
+      URL : "https://www.youtube.com/watch?v=NbKJFRgsw-A&ab_channel=PragmaticReviews",
     },
     {
       id: 4,
       name: "Recording4",
       StartTime: "5:00 AM",
       EndTime: "10",
+      URL : "https://www.youtube.com/watch?v=NbKJFRgsw-A&ab_channel=PragmaticReviews",
+    },
+    {
+      id: 5,
+      name: "Recording4",
+      StartTime: "5:00 AM",
+      EndTime: "10",
+      URL : "https://www.youtube.com/watch?v=NbKJFRgsw-A&ab_channel=PragmaticReviews",
+    },
+    {
+      id: 6,
+      name: "Recording4",
+      StartTime: "5:00 AM",
+      EndTime: "10",
+      URL : "https://www.youtube.com/watch?v=NbKJFRgsw-A&ab_channel=PragmaticReviews",
+    },
+    {
+      id: 7,
+      name: "Recording4",
+      StartTime: "5:00 AM",
+      EndTime: "10",
+      URL : "https://www.youtube.com/watch?v=NbKJFRgsw-A&ab_channel=PragmaticReviews",
+    },
+    {
+      id: 8,
+      name: "Recording4",
+      StartTime: "5:00 AM",
+      EndTime: "10",
+      URL : "https://www.youtube.com/watch?v=NbKJFRgsw-A&ab_channel=PragmaticReviews",
+    },
+    {
+      id: 9,
+      name: "Recording4",
+      StartTime: "5:00 AM",
+      EndTime: "10",
+      URL : "https://www.youtube.com/watch?v=NbKJFRgsw-A&ab_channel=PragmaticReviews",
+    },
+    {
+      id: 10,
+      name: "Recording4",
+      StartTime: "5:00 AM",
+      EndTime: "10",
+      URL : "https://www.youtube.com/watch?v=NbKJFRgsw-A&ab_channel=PragmaticReviews",
+    },
+    {
+      id: 11,
+      name: "Recording4",
+      StartTime: "5:00 AM",
+      EndTime: "10",
+      URL : "https://www.youtube.com/watch?v=NbKJFRgsw-A&ab_channel=PragmaticReviews",
+    },
+    {
+      id: 12,
+      name: "Recording4",
+      StartTime: "5:00 AM",
+      EndTime: "10",
+      URL : "https://www.youtube.com/watch?v=NbKJFRgsw-A&ab_channel=PragmaticReviews",
+    },
+    {
+      id: 13,
+      name: "Recording4",
+      StartTime: "5:00 AM",
+      EndTime: "10",
+      URL : "https://www.youtube.com/watch?v=NbKJFRgsw-A&ab_channel=PragmaticReviews",
+    },
+    {
+      id: 14,
+      name: "Recording4",
+      StartTime: "5:00 AM",
+      EndTime: "10",
+      URL : "https://www.youtube.com/watch?v=NbKJFRgsw-A&ab_channel=PragmaticReviews",
+    },
+    {
+      id: 15,
+      name: "Recording4",
+      StartTime: "5:00 AM",
+      EndTime: "10",
+      URL : "https://www.youtube.com/watch?v=NbKJFRgsw-A&ab_channel=PragmaticReviews",
+    },
+    {
+      id: 16,
+      name: "Recording4",
+      StartTime: "5:00 AM",
+      EndTime: "10",
+      URL : "https://www.youtube.com/watch?v=NbKJFRgsw-A&ab_channel=PragmaticReviews",
+    },
+    {
+      id: 17,
+      name: "Recording4",
+      StartTime: "5:00 AM",
+      EndTime: "10",
+      URL : "https://www.youtube.com/watch?v=NbKJFRgsw-A&ab_channel=PragmaticReviews",
+    },
+    {
+      id: 18,
+      name: "Recording4",
+      StartTime: "5:00 AM",
+      EndTime: "10",
+      URL : "https://www.youtube.com/watch?v=NbKJFRgsw-A&ab_channel=PragmaticReviews",
+    },
+    {
+      id: 19,
+      name: "Recording4",
+      StartTime: "5:00 AM",
+      EndTime: "10",
+      URL : "https://www.youtube.com/watch?v=NbKJFRgsw-A&ab_channel=PragmaticReviews",
+    },
+    {
+      id: 20,
+      name: "Recording4",
+      StartTime: "5:00 AM",
+      EndTime: "10",
+      URL : "https://www.youtube.com/watch?v=NbKJFRgsw-A&ab_channel=PragmaticReviews",
     },
   ]);
   const columns = [
@@ -60,12 +179,17 @@ import { useHistory } from "react-router-dom";
     },
     {
       key: "4",
-      title: "EndTime",
-      dataIndex: "EndTime",
+      title: "End Time",
+      dataIndex: "StartTime",
+    },
+    {
+      key: "5",
+      title: "URL",
+      dataIndex: "URL",
 
     },
     
-    {
+   {
       key: "5",
       title: "Actions",
 
@@ -121,8 +245,12 @@ import { useHistory } from "react-router-dom";
 //     setIsEditing(false);
 //     setEditingStudent(null);
 //   };
+
   return (
     <div className="App">
+          <Search />
+          <CharactersList />
+
       <header className="App-header">
         {/* <button style={{ backgroundColor: "#001C3E", color: "WHITE", marginLeft: "680px" ,height:"30px",width:"100px"}} onClick={navigateTo} type="button" >New Recording</button>
 
