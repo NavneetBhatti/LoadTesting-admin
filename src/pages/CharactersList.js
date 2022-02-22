@@ -37,7 +37,7 @@ query{
     }
   }
 }
-`;
+`
 
 
 export default function CharactersList(){
@@ -45,15 +45,42 @@ export default function CharactersList(){
     console.log(error, loading, data);
     if (loading) return <div>Spinner---</div>;
     if (error) return <div>wrong------</div>;
-    // console.log("this is err");
 
-    // console.log(err.networkError.result.errors);
-
+    
 
     
     return(
         <div>
+             <h1>Recordings</h1>
+             
+             {data.allRecordings.map((character) => {
+                 return(
+                   <div>
+                                  <h1>Recordings 6</h1>
 
+
+                     <h2>{character.id}</h2> 
+                     <h2>{character.startTime}</h2> 
+                     <h2>{character.endTime}</h2> 
+
+                     {character.urlInfoList.map((t) => {
+                        return(
+                          <div>
+                     <h1>{t.url}</h1> 
+                     <h1>{t.start}</h1> 
+                     <h1>{t.end}</h1> 
+
+                     </div>
+                        );
+                     })
+                     }
+
+
+                   </div>  
+
+                 );
+             })
+            }
         </div>
     )
 }
