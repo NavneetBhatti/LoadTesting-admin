@@ -249,7 +249,6 @@ import Search from "./Search";
   return (
     <div className="App">
           <Search />
-          <CharactersList />
 
       <header className="App-header">
         {/* <button style={{ backgroundColor: "#001C3E", color: "WHITE", marginLeft: "680px" ,height:"30px",width:"100px"}} onClick={navigateTo} type="button" >New Recording</button>
@@ -302,6 +301,9 @@ import Search from "./Search";
           /> */}
         {/* </Modal> */}
       </header>
+
+      <CharactersList />
+
     </div>
   );
 }
