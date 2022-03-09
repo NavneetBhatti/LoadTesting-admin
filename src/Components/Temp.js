@@ -1,13 +1,16 @@
 import "antd/dist/antd.css";
 import "../App.css";
-import { Button, Table, Modal, Input } from "antd";
-import { useState } from "react";
+import { Button, Table, Modal, Input, Row } from "antd";
+import { useState,useEffect } from "react";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import { useHistory } from "react-router-dom";
 import CharactersList from "../pages/CharactersList";
+// import Templates from "../pages/Templates";
 import Search from "./Search";
 import { useQuery,gql } from "@apollo/client"
-import Temp from "./Temp";
+import axios from 'axios';
+// import {Table} from 'react-bootstrap';
+
 
 
 const GET_CHARACTERS =  gql`
@@ -29,55 +32,103 @@ query{
 
 // export default function home() {
 
- function Recording() {
+ function Temp() {
   const {error, data , loading} = useQuery(GET_CHARACTERS)
+
+
+  
 
   const history = useHistory();
   const navigateTo = () => history.push('/load');//eg.history.push('/login'); 
   const [isEditing, setIsEditing] = useState(false);
   const [editingStudent, setEditingStudent] = useState(null);
-  const [dataSource, setDataSource] = useState([
-    {
-      id: 1,
-      name: "Recording1",
-      StartTime: "8:00 AM",
-      EndTime: "20",
-      URL : "https://www.youtube.com/watch?v=NbKJFRgsw-A&ab_channel=PragmaticReviews",
-    },
+  // const [dataSource, setDataSource] = useState([
+  //   {
+  //     id: 1,
+  //     name: "Recording1",
+  //     StartTime: "8:00 AM",
+  //     EndTime: "20",
+  //     URL : "https://www.youtube.com/watch?v=NbKJFRgsw-A&ab_channel=PragmaticReviews",
+  //   },
     
-  ]);
+  // ]);  
+
+
+
+  const [dataSource, setDataSource] = useState(  
+    data.allRecordings.map(row => ({
+    name: row.name,
+    StartTime: row.startTime,
+    EndTime: row.endTime ,
+    // URL:  row.urlInfoList.map((t)=>{  
+    //       return (t.url);  
+    //        })
+    URL:  row.urlInfoList.map((t)=>
+          <li>{t.url}</li>  
+             )  ,   
+    UrlStartTime:  row.urlInfoList.map((t)=>
+             <li>{t.start}</li>  
+                      )  ,  
+    UrlEndTime:  row.urlInfoList.map((t)=>
+              <li>{t.end}</li>  
+                        )                               
+          
+
+  }))          
+  
+  );
+
+
+  useEffect(() =>{
+    console.log("---test--")
+  },[dataSource])
+
+  
+
+
   const columns = [
+    // {
+    //   key: "1",
+    //   title: "ID",
+    //   dataIndex: "id",
+
+    // },
     {
       key: "1",
-      title: "ID",
-      dataIndex: "id",
-
-    },
-    {
-      key: "2",
       title: "Recording Name",
       dataIndex: "name",
 
     },
     {
-      key: "3",
+      key: "2",
       title: "Start Time",
       dataIndex: "StartTime",
 
     },
     {
-      key: "4",
+      key: "3",
       title: "End Time",
-      dataIndex: "StartTime",
+      dataIndex: "EndTime",
     },
     {
-      key: "5",
+      key: "4",
       title: "URL",
       dataIndex: "URL",
 
     },
-    
-   {
+    {
+      key: "5",
+      title: "URL Start Time",
+      dataIndex: "UrlStartTime",
+
+    },
+    {
+      key: "6",
+      title: "URL End Time",
+      dataIndex: "UrlEndTime",
+
+    },
+    {
       key: "5",
       title: "Actions",
 
@@ -99,9 +150,9 @@ query{
         );
       },
     },
+    
   ];
 
- 
   const onDeleteStudent = (record) => {
     Modal.confirm({
       title: "Are you sure, you want to delete this student record?",
@@ -114,8 +165,12 @@ query{
       },
     });
   };
-
+  
   return (
+   
+
+
+
     <div className="App">
           <Search />
 
@@ -124,19 +179,18 @@ query{
         {/* <Table columns={columns} dataSource={dataSource} className="tableR"></Table> */}
 
         <Table columns={columns} dataSource={dataSource}
-        className="tableR"></Table>
+        className="tableR" ></Table>
 
        
       </header>
 
-      <CharactersList />
+      {/* <CharactersList /> */}
       {/* <Templates /> */}
-      <Temp />
     </div>
   );
 }
 
-export default Recording;
+export default Temp;
 
 {/* <div>
         <h1>Recordings</h1>

@@ -15,7 +15,7 @@ import Load from './Components/Load';
 import Navbar from "./Components/Navbar/Navbar";
 import Recording from "./Components/Recording";
 import Result from "./Components/Result";
-import CharactersList from "./pages/CharactersList";
+
 
 
 const App = () => {
